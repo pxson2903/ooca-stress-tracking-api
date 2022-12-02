@@ -34,8 +34,8 @@ describe('Testing Auth', () => {
     }).save();
   });
 
-  describe('[POST] /login', () => {
-    it('register should be success', async () => {
+  describe('[POST] /signup', () => {
+    it('sign up should be success', async () => {
       const authRoute = new AuthRoute();
       const app = new App([authRoute]);
 
@@ -44,7 +44,7 @@ describe('Testing Auth', () => {
         password: faker.internet.password(),
       };
 
-      const res = await request(app.getServer()).post(`${authRoute.path}signUp`).send(newUser);
+      const res = await request(app.getServer()).post(`${authRoute.path}signup`).send(newUser);
       expect(res.statusCode).toBe(201);
     });
   });
